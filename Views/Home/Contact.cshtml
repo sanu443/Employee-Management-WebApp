@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+    ViewData["Message"] = "Pagina de contact a primăriei Craiova.";
+}
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Contact.css" />
+}
+
+<main aria-labelledby="title">
+    <h2 id="title">@ViewData["Title"]</h2>
+    <h3>@ViewData["Message"]</h3>
+
+    <address>
+        Strada Alexandru Ioan Cuza 7,<br />
+        Craiova 200585.<br />
+        <span title="Telefon">Telefon:</span>
+        0712341234
+    </address>
+
+    <address>
+        <strong>Support:</strong> <a href="mailto:SuportPrimarie@examplu.com">SuportPrimarie@exemplu.ro</a><br />
+        <strong>Consultații:</strong> <a href="mailto:ConsultatiiPrimarie@examplu.ro">ConsultatiiPrimarie@exemplu.ro</a>
+    </address>
+</main>

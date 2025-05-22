@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Gestiunea Activității Primăriei</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" />
+    <link rel="stylesheet" href="~/css/Site.css" />
+    @RenderSection("PageStyles", required: false)
+</head>
+<body>
+    <header>
+        <nav class="bara-navigatie">
+            <ul class="navigatie-stanga">
+                <li><a asp-controller="Home" asp-action="Index">Acasa</a></li>
+                <li><a asp-controller="Home" asp-action="About">Despre</a></li>
+                <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li><a asp-controller="Departament" asp-action="Index">Management Departamente</a></li>
+                <li><a asp-controller="Post" asp-action="Index">Management Posturi</a></li>
+                <li><a asp-controller="Angajat" asp-action="Index">Management Angajați</a></li>
+            </ul>
+            <div class="navigatie-dreapta">
+                Utilizator logat:
+                <a asp-controller="Home" asp-action="Profil">primar1234@exemplu.ro</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Gestiunea activității unei primării</p>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

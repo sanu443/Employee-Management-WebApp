@@ -1,0 +1,75 @@
+@model PrimarieApp.Models.Post
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Angajat.css" />
+}
+
+@{
+    ViewData["Title"] = "Adaugă Post";
+}
+
+<h2 class="angajat-titlu">@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post">
+    <table class="angajat-tabel">
+        <tr>
+            <td><strong>Nume post</strong></td>
+            <td><input asp-for="NumePost" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td><strong>Descriere post</strong></td>
+            <td><textarea asp-for="DescrierePost" class="form-control"></textarea></td>
+        </tr>
+        <tr>
+            <td><strong>Fișa postului</strong></td>
+            <td><textarea asp-for="FisaPostului" class="form-control"></textarea></td>
+        </tr>
+        <tr>
+            <td><strong>Nr. angajați necesari</strong></td>
+            <td><input asp-for="NrAngajatiNecesari" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td><strong>Nr. posturi ocupate</strong></td>
+            <td><input asp-for="NrPosturiOcupate" class="form-control" /></td>
+        </tr>
+    </table>
+
+    <h3 class="angajat-titlu" style="font-size: 1.3rem;">Angajați curenți</h3>
+
+    <table class="angajat-tabel">
+        <thead>
+            <tr>
+                <td><strong>Nume</strong></td>
+                <td><strong>Prenume</strong></td>
+                <td><strong>Vechime în funcție</strong></td>
+                <td><strong>Notă la concurs</strong></td>
+                <td><strong>Link către Pagina de Angajat</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="5"><em>Nu există angajați curenți pe acest post.</em></td></tr>
+        </tbody>
+    </table>
+
+    <h3 class="angajat-titlu" style="font-size: 1.3rem;">Foști angajați / Aplicanți</h3>
+
+    <table class="angajat-tabel">
+        <thead>
+            <tr>
+                <td><strong>Nume</strong></td>
+                <td><strong>Prenume</strong></td>
+                <td><strong>Vechime în funcție</strong></td>
+                <td><strong>Notă la concurs</strong></td>
+                <td><strong>Link către Pagina de Angajat</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td colspan="5"><em>Nu există foști angajați sau aplicanți asociați.</em></td></tr>
+        </tbody>
+    </table>
+
+    <div class="btn-grup-formular">
+        <button type="submit" class="btn-formular btn-success">Salvează</button>
+        <a asp-action="Index" class="btn-formular btn-secondary">Renunță</a>
+    </div>
+</form>

@@ -1,0 +1,18 @@
+﻿.action-list {
+    display: flex;
+    gap: 5px; /* spațiu intre elemente */
+    padding: 10px;
+    background-color: #fafafa;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+#orgChart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+.organigrama-titlu {
+    text-align: center;
+    margin-bottom: 40px;
+}

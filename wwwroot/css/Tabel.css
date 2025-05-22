@@ -1,0 +1,67 @@
+﻿.tabel-departamente {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px; 
+}
+
+    .tabel-departamente th,
+    .tabel-departamente td {
+        border: 1px solid #333;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .tabel-departamente thead {
+        background-color: #003366;
+        color: white;
+    }
+
+    .tabel-departamente tbody tr:nth-child(odd) {
+        background-color: #ffffff;
+    }
+
+    .tabel-departamente tbody tr:nth-child(even) {
+        background-color: #f0f8ff;
+    }
+
+.titlu-departamente {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 35px; 
+    font-weight: bold;
+}
+
+.btn-adauga {
+    font-size: 1.1em;
+    margin-bottom: 5px; 
+    display: inline-block;
+}
+
+input[type="text"], textarea {
+    height: 60px;
+    font-size: 1rem;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+    vertical-align: middle;
+    font-family: inherit;
+}
+
+textarea {
+    line-height: normal;
+}
+
+.btn-grup-formular {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-formular {
+    padding: 10px 25px;
+    font-size: 1rem;
+    min-width: 140px;
+}
+

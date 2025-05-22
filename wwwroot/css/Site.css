@@ -1,0 +1,130 @@
+﻿:root {
+    --primary-color: #007bff; /* albastru */
+    --primary-dark: #0056b3; /* albastru inchis */
+    --text-color: #333; /* gri */
+    --background-color: #fff; /* alb */
+    --header-footer-bg: #f8f9fa; /* gri deschis */
+    --font-family-base: 'Open Sans', sans-serif; /* font */
+    --font-size-base: 16px; /* marime font */
+}
+.bara-navigatie {
+    display: flex; /* activeaza flexbox */
+    align-items: center; /* centreaza pe verticala */
+    justify-content: center;
+    background-color: var(--header-footer-bg); /* gri deschis */
+    height: 60px; /* inaltime fixa pentru vizibilitate */
+    font-size: 1.2rem;
+}
+
+.navigatie-stanga {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 20px;
+}
+
+    .navigatie-stanga li {
+        margin-right: 20px;
+    }
+
+        .navigatie-stanga li a {
+            color: #007bff; /* albastru */
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+            .navigatie-stanga li a:hover {
+                color: #0056b3; /* albastru inchis */
+            }
+
+.navigatie-dreapta {
+    position: absolute;
+    left: 78%;
+    color: #333; /* gri inchis */
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-color);
+    background: url("..//images/30110241611_ef178796c5_k.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+header {
+    background-color: var(--header-footer-bg);
+    font-family: var(--font-family-base);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd; /* gri */
+}
+
+footer {
+    background-color: var(--header-footer-bg);
+    font-family: var(--font-family-base);
+    padding: 15px 20px;
+    text-align: center;
+    border-top: 1px solid #ddd; /* gri luminos */
+    font-size: 1.3rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    background-color: #f8f9fa;
+}
+
+/* Titluri */
+h2 {
+    font-size: 28px;
+    margin: 40px 20px 20px;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 30px 20px 10px;
+    color: var(--primary-color);
+}
+
+/* Paragraf general */
+p {
+    margin: 15px 20px;
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.3rem;
+}
+
+/* Linie orizontala */
+hr {
+    border: none;
+    border-top: 1px solid #ccc; /* gri */
+    margin: 30px auto;
+    max-width: 900px;
+}
+
+/* Link */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+    a:hover {
+        color: var(--primary-dark);
+        text-decoration: underline;
+    }

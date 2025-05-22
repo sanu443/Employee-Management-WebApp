@@ -1,0 +1,81 @@
+@model PrimarieApp.Models.Angajat
+
+@{
+    ViewData["Title"] = "Adaugă Angajat";
+}
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Angajat.css" />
+}
+
+<h2 class="angajat-titlu">@ViewData["Title"]</h2>
+
+<form asp-action="Create" method="post">
+    <table class="angajat-tabel">
+        <tr>
+            <td>Nume</td>
+            <td><input asp-for="Nume" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td>Inițiala tată</td>
+            <td><input asp-for="InitialaTata" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td>Prenume</td>
+            <td><input asp-for="Prenume" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input asp-for="Email" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td>Telefon</td>
+            <td><input asp-for="Telefon" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td>Adresă domiciliu</td>
+            <td><input asp-for="AdresaDomiciliu" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td>CNP</td>
+            <td><input asp-for="CNP" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td>Școala absolvită</td>
+            <td><input asp-for="ScoalaAbsolvita" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td>Media concurs</td>
+            <td><input asp-for="MediaConcurs" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td>Data angajare</td>
+            <td><input asp-for="DataAngajare" type="date" class="form-control" value="@DateTime.Today.ToString("yyyy-MM-dd")" /></td>
+        </tr>
+        <tr>
+            <td>Salariu curent</td>
+            <td><input asp-for="SalariuCurent" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td>Post</td>
+            <td>
+                <select asp-for="PostId" asp-items="ViewBag.Posturi" class="form-control">
+                    <option value="">-- Selectează post --</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Departament</td>
+            <td>
+                <select asp-for="DepartamentId" asp-items="ViewBag.Departamente" class="form-control">
+                    <option value="">-- Selectează departament --</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+    <div class="btn-grup-formular">
+        <button type="submit" class="btn btn-success btn-formular">Salvează</button>
+        <a asp-action="Index" class="btn btn-secondary btn-formular">Renunță</a>
+    </div>
+</form>

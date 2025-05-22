@@ -1,0 +1,91 @@
+﻿@model PrimarieApp.Models.Angajat
+
+@{
+    ViewData["Title"] = "Pagina Angajat";
+}
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Angajat.css" />
+}
+
+<h2 class="angajat-titlu">Profil Angajat: @Model.Nume @Model.InitialaTata. @Model.Prenume</h2>
+
+<table class="angajat-tabel">
+    <tr>
+        <td><strong>Nume</strong></td>
+        <td>@Model.Nume</td>
+    </tr>
+    <tr>
+        <td><strong>Inițiala tată</strong></td>
+        <td>@Model.InitialaTata</td>
+    </tr>
+    <tr>
+        <td><strong>Prenume</strong></td>
+        <td>@Model.Prenume</td>
+    </tr>
+    <tr>
+        <td><strong>Email</strong></td>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <td><strong>Telefon</strong></td>
+        <td>@Model.Telefon</td>
+    </tr>
+    <tr>
+        <td><strong>Adresă domiciliu</strong></td>
+        <td>@Model.AdresaDomiciliu</td>
+    </tr>
+    <tr>
+        <td><strong>CNP</strong></td>
+        <td>@Model.CNP</td>
+    </tr>
+    <tr>
+        <td><strong>Școala absolvită</strong></td>
+        <td>@Model.ScoalaAbsolvita</td>
+    </tr>
+    <tr>
+        <td><strong>Media concurs</strong></td>
+        <td>@Model.MediaConcurs</td>
+    </tr>
+    <tr>
+        <td><strong>Data angajare</strong></td>
+        <td>@Model.DataAngajare.ToString("dd.MM.yyyy")</td>
+    </tr>
+    <tr>
+        <td><strong>Salariu curent</strong></td>
+        <td>@Model.SalariuCurent</td>
+    </tr>
+    <tr>
+        <td><strong>Post</strong></td>
+        <td>
+            @if (Model.Post != null)
+            {
+                <a href="@Url.Action("Pagina", "Post", new { id = Model.PostId })">
+                    @Model.Post.NumePost
+                </a>
+            }
+            else
+            {
+                <em>–</em>
+            }
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Departament</strong></td>
+        <td>
+            @if (Model.Departament != null)
+            {
+                @Model.Departament.Nume
+            }
+            else
+            {
+                <em>–</em>
+            }
+        </td>
+    </tr>
+</table>
+
+<div class="btn-grup-formular">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success btn-formular">Editează</a>
+    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger btn-formular">Șterge</a>
+</div>

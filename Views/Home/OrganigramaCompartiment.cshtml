@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "OrganigramaCompartiment";
+}
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/OrganigramaCompartiment.css" />
+}
+
+<h1 id="titluOrganigrama" class="organigrama-titlu">Organigrama Compartiment</h1>
+
+<div id="orgChart" class="mermaid">
+    graph TD
+</div>
+
+<h3>Adauga pozitie in organigrama:</h3>
+<div id="listaPredefinita" class="action-list"></div>
+
+<div id="formular" style="display:none;">
+    <h3>Specifica detalii nod nou</h3>
+    <label for="ascendent">Ascendent:</label>
+    <select id="ascendent"></select><br><br>
+
+    <label for="tipRelatie">Tip Relatie:</label>
+    <input type="text" id="tipRelatie" placeholder="ex: Subordonare"><br><br>
+
+    <button onclick="submitForm()">Submit</button>
+</div>
+<!-- Sectiunea pentru "Modifica pozitie" -->
+<h3>Modifica pozitie:</h3>
+<div id="listaModificare" class="action-list"></div>
+
+<div id="formularModificare" style="display:none;">
+    <h3>Specifica noua denumire</h3>
+    <input type="text" id="nouaDenumire" placeholder="Noua denumire"><br><br>
+    <button onclick="submitModificare()">Submit</button>
+</div>
+
+<!-- Sectiunea pentru "Sterge pozitie" -->
+<h3>Sterge pozitie:</h3>
+<div id="listaStergere" class="action-list"></div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="~/Scripts/MyScripts/OrganigramaCompartiment.js"></script>
+}

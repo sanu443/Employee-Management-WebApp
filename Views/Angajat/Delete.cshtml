@@ -1,0 +1,35 @@
+@model PrimarieApp.Models.Angajat
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Tabel.css" />
+}
+
+@{
+    ViewData["Title"] = "Șterge Angajat";
+}
+
+<h2 class="titlu-departamente">@ViewData["Title"]</h2>
+
+<form method="post" asp-action="DeleteConfirmed">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <table class="tabel-departamente">
+        <thead>
+            <tr>
+                <th>Nume complet</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@($"{Model.Nume} {Model.InitialaTata}. {Model.Prenume}")</td>
+                <td>@Model.Email</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="btn-grup-formular">
+        <button type="submit" class="btn btn-danger btn-formular">Șterge</button>
+        <a asp-action="Index" class="btn btn-secondary btn-formular">Renunță</a>
+    </div>
+</form>

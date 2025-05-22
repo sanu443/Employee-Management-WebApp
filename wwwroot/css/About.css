@@ -1,0 +1,50 @@
+h2 { 
+    text-align: center;
+    margin: 40px 20px 60px; 
+}
+
+.despre-imagine {
+    display: block;
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 30px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .despre-imagine:hover {
+        transform: scale(1.02);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+.despre-text {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 1.2rem; 
+    line-height: 1.8;
+    color: black; 
+    font-weight: normal;
+    text-align: justify;  /*chenar*/
+}
+
+.linkuri-utile {
+    max-width: 800px;
+    margin: 30px auto;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    font-size: 1rem;
+    text-align: center;
+}
+
+    .linkuri-utile a {
+        color: #007bff;
+        text-decoration: none;
+        margin: 0 8px;
+        transition: color 0.3s ease;
+    }
+        .linkuri-utile a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }

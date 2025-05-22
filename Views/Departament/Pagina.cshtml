@@ -1,0 +1,69 @@
+@model PrimarieApp.Models.Departament
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Angajat.css" />
+}
+
+@{
+    ViewData["Title"] = "Pagina Departament";
+}
+
+<h2 class="angajat-titlu">Departament: @Model.Nume</h2>
+
+<table class="angajat-tabel">
+    <tr>
+        <td>Nume</td>
+        <td>@Model.Nume</td>
+    </tr>
+    <tr>
+        <td>Descriere</td>
+        <td>@Model.Descriere</td>
+    </tr>
+</table>
+
+<h3 class="angajat-titlu" style="font-size: 1.3rem;">Angajați din departament</h3>
+
+<table class="angajat-tabel">
+    <thead>
+        <tr>
+            <td><strong>ID</strong></td>
+            <td><strong>Nume</strong></td>
+            <td><strong>Post</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Angajati != null && Model.Angajati.Any())
+        {
+            foreach (var angajat in Model.Angajati)
+            {
+                <tr>
+                    <td>@angajat.Id</td>
+                    <td>
+                        <a href="@Url.Action("Pagina", "Angajat", new { id = angajat.Id })">
+                            @angajat.Nume @angajat.InitialaTata. @angajat.Prenume
+                        </a>
+                    </td>
+                    <td>
+                        @if (angajat.Post != null)
+                        {
+                            <a href="@Url.Action("Pagina", "Post", new { id = angajat.PostId })">
+                                @angajat.Post.NumePost
+                            </a>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3"><em>Nu există angajați în acest departament.</em></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="btn-grup-formular">
+    <a href="@Url.Action("Edit", "Departament", new { id = Model.Id })" class="btn-formular btn-success">Editează</a>
+    <a href="@Url.Action("Delete", "Departament", new { id = Model.Id })" class="btn-formular btn-danger">Șterge</a>
+</div>

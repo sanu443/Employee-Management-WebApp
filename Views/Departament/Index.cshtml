@@ -1,0 +1,42 @@
+﻿@model IEnumerable<PrimarieApp.Models.Departament>
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Tabel.css" />
+    <link rel="stylesheet" href="~/css/Angajat.css" />
+}
+
+@{
+    ViewData["Title"] = "Lista Departamente";
+}
+
+<h2 class="titlu-departamente">@ViewData["Title"]</h2>
+
+<table class="tabel-departamente">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nume</th>
+            <th>Descriere</th>
+            <th>Acțiuni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nume</td>
+                <td>@item.Descriere</td>
+                <td>
+                    <a href="/Departament/Edit/@item.Id">Editează</a> |
+                    <a href="/Departament/Delete/@item.Id">Șterge</a> |
+                    <a href="/Departament/Pagina/@item.Id">Pagina departament</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="btn-grup-formular">
+    <a href="/Departament/Create" class="btn-formular btn-success">Adaugă departament</a>
+</div>

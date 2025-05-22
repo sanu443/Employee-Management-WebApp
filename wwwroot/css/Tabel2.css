@@ -1,0 +1,97 @@
+﻿.table {
+    width: 80%;
+    margin: 0 auto 20px;
+    border-collapse: collapse;
+    border: 2px solid #333; /* marginea întregului tabel */
+}
+
+    /* Alternanță subtilă pe fundal rânduri */
+    .table tr:nth-of-type(odd) {
+        background-color: rgba(0, 0, 255, 0.05);
+    }
+
+    .table tr:nth-of-type(even) {
+        background-color: #fff;
+    }
+
+    /* Borduri între toate celulele */
+    .table td {
+        padding: 10px 12px;
+        border: 1px solid #999;
+        vertical-align: middle;
+    }
+
+        /* Coloana 1 (etichete) – colorată + separator puternic în dreapta */
+        .table td:first-child {
+            font-weight: bold;
+            width: 35%;
+            background-color: #f1f5fb;
+            border-right: 2px solid #333; /* separator clar între coloane */
+        }
+
+/* Formularele – fundal transparent (moștenesc culoarea rândului) */
+input[type="text"],
+input[type="number"],
+textarea,
+.form-control {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #999;
+    background-color: transparent; /* moștenește fundalul rândului */
+    width: 100%;
+    box-sizing: border-box;
+    height: 50px;
+    font-family: inherit;
+    resize: none;
+}
+
+textarea {
+    min-height: 90px;
+}
+
+/* Grup de butoane centrat */
+.btn-grup-formular {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-formular,
+.btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+    min-width: 140px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Titlu centrat */
+h2 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+
+/* Link discret pentru adăugare */
+.btn-adauga {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    display: inline-block;
+    text-decoration: underline;
+    color: #003366;
+}

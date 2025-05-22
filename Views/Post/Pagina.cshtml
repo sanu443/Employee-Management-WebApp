@@ -1,0 +1,109 @@
+﻿@model Post
+
+@{
+    ViewData["Title"] = "Pagina postului";
+}
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Post.css" />
+}
+
+<h2 class="post-titlu">Fișa Postului: @Model.NumePost</h2>
+
+<table class="post-tabel">
+    <tr>
+        <td><strong>Nume post</strong></td>
+        <td>@Model.NumePost</td>
+    </tr>
+    <tr>
+        <td><strong>Descriere post</strong></td>
+        <td>@Model.DescrierePost</td>
+    </tr>
+    <tr>
+        <td><strong>Fișa postului</strong></td>
+        <td>@Model.FisaPostului</td>
+    </tr>
+    <tr>
+        <td><strong>Nr. angajați necesari</strong></td>
+        <td>@Model.NrAngajatiNecesari</td>
+    </tr>
+    <tr>
+        <td><strong>Nr. posturi ocupate</strong></td>
+        <td>@Model.NrPosturiOcupate</td>
+    </tr>
+</table>
+
+<h3 class="post-subtitlu">Angajați curenți</h3>
+
+<table class="post-tabel">
+    <thead>
+        <tr>
+            <td><strong>Nume</strong></td>
+            <td><strong>Prenume</strong></td>
+            <td><strong>Vechime în funcție</strong></td>
+            <td><strong>Notă la concurs</strong></td>
+            <td><strong>Link către Pagina de Angajat</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Angajati != null && Model.Angajati.Any(a => a.AngajatCurent))
+        {
+            foreach (var angajat in Model.Angajati.Where(a => a.AngajatCurent))
+            {
+                <tr>
+                    <td>@angajat.Nume</td>
+                    <td>@angajat.Prenume</td>
+                    <td>@(DateTime.Now.Year - angajat.DataAngajare.Year) ani</td>
+                    <td>@angajat.MediaConcurs</td>
+                    <td>
+                        <a href="@Url.Action("Pagina", "Angajat", new { id = angajat.Id })">Vezi Profil</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="5"><em>Nu există angajați curenți pe acest post.</em></td></tr>
+        }
+    </tbody>
+</table>
+
+<h3 class="post-subtitlu">Foști angajați / Aplicanți (Potențiali angajați)</h3>
+
+<table class="post-tabel">
+    <thead>
+        <tr>
+            <td><strong>Nume</strong></td>
+            <td><strong>Prenume</strong></td>
+            <td><strong>Vechime în funcție</strong></td>
+            <td><strong>Notă la concurs</strong></td>
+            <td><strong>Link către Pagina de Angajat</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Angajati != null && Model.Angajati.Any(a => !a.AngajatCurent))
+        {
+            foreach (var angajat in Model.Angajati.Where(a => !a.AngajatCurent))
+            {
+                <tr>
+                    <td>@angajat.Nume</td>
+                    <td>@angajat.Prenume</td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td>
+                        <a href="@Url.Action("Pagina", "Angajat", new { id = angajat.Id })">Vezi Profil</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="5"><em>Nu există foști angajați sau aplicanți asociați.</em></td></tr>
+        }
+    </tbody>
+</table>
+
+<div class="btn-grup-formular">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-success btn-formular">Editează</a>
+    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger btn-formular">Șterge</a>
+</div>

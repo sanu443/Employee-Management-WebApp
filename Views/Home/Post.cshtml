@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Fisa Postului: Primar";
+}
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Post.css" />
+}
+
+<h2 class="post-titlu">Fisa Postului: Primar</h2>
+
+<!-- Tabel cu detalii despre post -->
+<table class="post-tabel">
+    <tr>
+        <td>Nume post</td>
+        <td>Primar</td>
+    </tr>
+    <tr>
+        <td>Descriere post</td>
+        <td>Conducerea primariei si reprezentarea acesteia in relatia cu alte institutii.</td>
+    </tr>
+    <tr>
+        <td>Nr. angajati necesari</td>
+        <td>1</td>
+    </tr>
+    <tr>
+        <td>Nr. posturi ocupate</td>
+        <td>1</td>
+    </tr>
+</table>
+
+<h3 class="post-subtitlu">Angajati curenti</h3>
+<table class="post-tabel">
+    <tr>
+        <td>Nume</td>
+        <td>Prenume</td>
+        <td>Vechime in functie</td>
+        <td>Nota la concurs</td>
+        <td>Link catre Pagina de Angajat</td>
+    </tr>
+    <tr>
+        <td>Ionescu</td>
+        <td>Ion</td>
+        <td>1 an</td>
+        <td>9.45</td>
+        <td>
+            <a href="/Home/Angajat">Vezi Profil</a>
+        </td>
+    </tr>
+</table>
+
+<h3 class="post-subtitlu">Fosti Angajati / Aplicanti (Potentiali angajati)</h3>
+<table class="post-tabel">
+    <tr>
+        <td>Nume</td>
+        <td>Prenume</td>
+        <td>Vechime in functie</td>
+        <td>Nota la concurs</td>
+        <td>Link catre Pagina de Angajat</td>
+    </tr>
+    <tr>
+        <td>Popescu</td>
+        <td>Vasile</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>
+            <a href="/Home/Angajat">Vezi Profil</a>
+        </td>
+    </tr>
+    <tr>
+        <td>Marin</td>
+        <td>Andreea</td>
+        <td>N/A</td>
+        <td>N/A</td>
+        <td>
+            <a href="/Home/Angajat">Vezi Profil</a>
+        </td>
+    </tr>
+</table>

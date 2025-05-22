@@ -1,0 +1,90 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Cautare Angajat";
+}
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/Content/Styles/Search.css" />
+}
+
+<h2 class="search-titlu">Cautare Angajat</h2>
+
+<div class="search-form">
+
+    <input type="text" class="search-input" placeholder="Cauta dupa nume, post sau departament..." />
+    <div class="search-type">
+        <label for="tipCautare">Tip Cautare:</label>
+        <select id="tipCautare" class="search-select">
+            <option value="nume">Nume</option>
+            <option value="post">Post</option>
+            <option value="compartiment">Compartiment</option>
+        </select>
+    </div>
+
+    <!-- Checkbox pentru fosti angajati / aplicanti -->
+    <div class="search-checkbox">
+        <input type="checkbox" id="includeFosti" />
+        <label for="includeFosti">Include fosti angajati / aplicanti</label>
+    </div>
+
+    <!-- Buton submit -->
+    <button class="search-button">Cautare</button>
+</div>
+
+<h3 class="search-subtitlu">Rezultate</h3>
+
+<!-- Tabel cu rezultate: Nume (link), Post (link), Departament -->
+<table class="search-tabel">
+    <tr>
+        <td>Nume</td>
+        <td>Post</td>
+        <td>Departament</td>
+    </tr>
+
+    <!-- 5 intrari exemplu -->
+    <tr>
+        <td>
+            <a href="/Home/Angajat">Ion Ionescu</a>
+        </td>
+        <td>
+            <a href="/Home/Post">Primar</a>
+        </td>
+        <td>Primarie</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/Home/Angajat">Ion Andrei</a>
+        </td>
+        <td>
+            <a href="/Home/Post">Consilier</a>
+        </td>
+        <td>Consiliu Local</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/Home/Angajat">Ion Georgiana</a>
+        </td>
+        <td>
+            <a href="/Home/Post">Inspector</a>
+        </td>
+        <td>Finante</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/Home/Angajat">Ion Dan</a>
+        </td>
+        <td>
+            <a href="/Home/Post">Politist</a>
+        </td>
+        <td>Politie Locala</td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/Home/Angajat">Ion Violeta</a>
+        </td>
+        <td>
+            <a href="/Home/Post">Secretar</a>
+        </td>
+        <td>Secretariat</td>
+    </tr>
+</table>

@@ -1,0 +1,76 @@
+﻿@model List<Angajat>
+
+@{
+    ViewData["Title"] = "Căutare Angajați";
+    var tipSelectat = ViewBag.Tip as string ?? "";
+    var termen = ViewBag.Termen as string ?? "";
+}
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Search.css" />
+    <link rel="stylesheet" href="~/css/Tabel.css" />
+}
+
+<h2 class="search-titlu">@ViewData["Title"]</h2>
+
+<form method="get" class="search-form">
+    <input type="text" name="termen" value="@termen" class="search-input" placeholder="Introduceți termenul de căutare" />
+
+    <select name="tip" class="search-input">
+        <option value="">Caută după...</option>
+        <option value="angajat" selected="@(tipSelectat == "angajat")">Nume angajat</option>
+        <option value="post" selected="@(tipSelectat == "post")">Nume post</option>
+        <option value="departament" selected="@(tipSelectat == "departament")">Nume departament</option>
+    </select>
+
+    <button type="submit" class="search-button">Caută</button>
+    <a href="@Url.Action("Index", "Angajat")" class="search-button" style="text-align:center;">Reset</a>
+</form>
+
+<table class="tabel-departamente">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nume</th>
+            <th>Post</th>
+            <th>Departament</th>
+            <th>Email</th>
+            <th>Acțiuni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var angajat in Model)
+        {
+            <tr>
+                <td>@angajat.Id</td>
+                <td>@($"{angajat.Nume} {angajat.InitialaTata}. {angajat.Prenume}")</td>
+                <td>
+                    @if (angajat.Post != null)
+                    {
+                        <a href="@Url.Action("Pagina", "Post", new { id = angajat.PostId })">
+                            @angajat.Post.NumePost
+                        </a>
+                    }
+                </td>
+                <td>
+                    @if (angajat.Departament != null)
+                    {
+                        <a href="@Url.Action("Pagina", "Departament", new { id = angajat.DepartamentId })">
+                            @angajat.Departament.Nume
+                        </a>
+                    }
+                </td>
+                <td>@angajat.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@angajat.Id">Editează</a> |
+                    <a asp-action="Delete" asp-route-id="@angajat.Id">Șterge</a> |
+                    <a asp-action="Pagina" asp-route-id="@angajat.Id">Link profil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div style="text-align: center; margin-top: 20px;">
+    <a href="/Angajat/Create" class="search-button" style="background-color: #28a745;">Adaugă angajat</a>
+</div>

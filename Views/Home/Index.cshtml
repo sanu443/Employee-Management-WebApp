@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Index";
+}
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/@($"{ViewBag.Title}.css")" />
+}
+
+<!-- Sectiunea de titlu -->
+<div class="index-titlu">
+    <h1>GAP - Gestiunea Activitatilor Primariei</h1>
+    <p class="index-welcome">
+        Bun venit, 
+        <span class="index-username">primar1234</span>! 
+        Aici poti accesa principalele functionalitati din perspectiva administratorului:
+    </p>
+</div>
+
+<!-- Lista cu functionalitatile principale -->
+<div class="index-feature-list">
+
+    <div class="index-feature">
+        <h3>Restructurare posturi</h3>
+        <p>Inserare, modificare si stergere a posturilor si compartimentelor.</p>
+        <a href="@Url.Action("Organigrama", "Home")" class="btn">Acceseaza</a>
+    </div>
+
+    <div class="index-feature">
+        <h3>Management angajati</h3>                
+        <p>Asigneaza, elibereaza posturi, alege angajati noi sau existenti.</p>
+        <a href="@Url.Action("ManagementAngajati", "Home")" class="btn">Acceseaza</a>
+    </div>
+
+    <div class="index-feature">
+        <h3>Vizualizare organigrama</h3>
+        <p>Exploreaza structura primariei, compartimente, posturi, angajati.</p>
+        <a href="@Url.Action("Organigrama", "Home")" class="btn">Acceseaza</a>
+    </div>
+
+    <div class="index-feature">
+        <h3>Cautare angajat</h3>
+        <p>Listeaza angajatii, filtreaza dupa nume, include fostii angajati.</p>
+        <a href="@Url.Action("Search", "Home")" class="btn">Acceseaza</a>
+    </div>
+
+    <div class="index-feature">
+        <h3>Cautare post</h3>
+        <p>Cauta posturi dupa nume, departament si vezi detalii complete.</p>
+        <a href="@Url.Action("CautarePost", "Home")" class="btn">Acceseaza</a>
+    </div>
+
+    <div class="index-feature">
+        <h3>Management Posturi</h3>
+        <p>Gestioneaza posturile active: adauga, editeaza si sterge posturi.</p>
+        <a href="@Url.Action("Index", "Post")" class="btn">Acceseaza</a>
+    </div>
+	
+	<div class="index-feature">
+		<h3>Management Angajați</h3>
+		<p>Adaugă, editează sau șterge angajați din cadrul primăriei.</p>
+		<a href="@Url.Action("Index", "Angajat")" class="btn">Accesează</a>
+	</div>
+
+</div>

@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Profil";
+}
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/Content/Styles/Profil.css" />
+}
+
+<div class="profil-container">
+    <h2 class="profil-titlu">
+        Pagina de profil a utilizatorului:
+        <span class="profil-username"> primar1234 </span>
+    </h2>
+
+    <div class="profil-card">
+        <p class="profil-row"><strong>Nume:</strong> Ionescu</p>
+        <p class="profil-row"><strong>Prenume:</strong> Ion</p>
+        <p class="profil-row"><strong>Email:</strong> primar1234@exemplu.ro</p>
+        <p class="profil-row"><strong>Rol:</strong> Primar / Administrator</p>
+
+        <p class="profil-row">
+            <strong>Link:</strong>
+            <a href="/Home/Angajat">Pagina de angajat</a>
+        </p>
+
+        <p class="profil-row"><strong>Descriere:</strong> Viziunea noastra asupra orasului...</p>
+
+        <p class="profil-row"><strong>Poza de profil:</strong></p>
+
+        <div class="profil-image-row">
+            <img class="profil-poza" src="~/Content/Images/istockphoto-1303206558-612x612.jpg" alt="Poza profil" />
+            <div class="profil-upload">
+                <label for="pozaNoua">Incarca alta poza:</label>
+                <input type="file" id="pozaNoua" name="pozaNoua" accept="image/*" />
+            </div>
+        </div>
+    </div>
+</div>

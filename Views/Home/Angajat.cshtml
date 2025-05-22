@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Profil Angajat: Ion Ionescu";
+}
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Angajat.css" />
+}
+
+<div class="angajat-header">
+    <h2 class="angajat-titlu">
+        <span class="angajat-titlu-profil">Profil Angajat</span>:
+        <span class="angajat-titlu-nume">Ion Ionescu</span>
+    </h2>
+    <img src="~/Content/Images/istockphoto-1303206558-612x612.jpg" alt="Poza profil" class="angajat-poza" />
+</div>
+
+<table class="angajat-tabel">
+    <tr>
+        <td>Nume</td>   
+        <td>Ionescu</td>
+    </tr>
+    <tr>
+        <td>Initiala prenumelui tatalui</td>
+        <td>I</td>
+    </tr>
+    <tr>
+        <td>Prenume</td>
+        <td>Ion</td>
+    </tr>
+    <tr>
+        <td>Functia Ocupata</td>
+        <td>
+            <a href="/Home/Post">Primar</a> 
+            (<a href="@Url.Action("OrganigramaCompartiment", "Home")">vizualizare in organigrama</a>)
+        </td>
+    </tr>
+    <tr>
+        <td>Departament</td>
+        <td>Primarie</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>primar1234@exemplu.ro</td>
+    </tr>
+    <tr>
+        <td>Numar de telefon</td>
+        <td>0722123456</td>
+    </tr>
+    <tr>
+        <td>Adresa domiciliu</td>
+        <td>Str. Libertatii nr. 1</td>
+    </tr>
+    <tr>
+        <td>CNP</td>
+        <td>1234567890123</td>
+    </tr>
+    <tr>
+        <td>Ultima Scoala Absolvita</td>
+        <td>Facultatea de Management: Universitatea din Craiova</td>
+    </tr>
+    <tr>
+        <td>Media la concursul de intrare pe post</td>
+        <td>9.45</td>
+    </tr>
+    <tr>
+        <td>Data Angajarii</td>
+        <td>01/05/2022</td>
+    </tr>
+    <tr>
+        <td>Salariul curent</td>
+        <td>5000 RON</td>
+    </tr>
+    <tr>
+        <td>Media Salariilor din ultimii 2 ani</td>
+        <td>4500 RON</td>
+    </tr>
+</table>

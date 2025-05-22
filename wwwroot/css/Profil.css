@@ -1,0 +1,76 @@
+﻿body {
+    background: url("../Images/30110241611_ef178796c5_k.jpg") no-repeat center center;
+    background-size: cover;
+}
+/* Container general, centrat */
+.profil-container {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Titlu centrat */
+.profil-titlu {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+.profil-username {
+    color:blue; 
+}
+
+/* Card mai lat */
+.profil-card {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+/*Fundal; alternativ*/
+.profil-row {
+    font-size: 1.1rem;
+    margin: 0; /* fara spatiu intre campuri */
+    padding: 10px; /* totusi un pic de spatiu interior */
+}
+
+/* Paragrafele impare (1,3,5...) albastru  */
+.profil-card p:nth-of-type(odd) {
+    background-color: rgba(0, 0, 255, 0.1); /* albastru transparent */
+}
+
+/* Paragrafele pare (2,4,6...) alb */
+.profil-card p:nth-of-type(even) {
+    background-color: #fff;
+}
+
+/* Imagine mai mare (250px) */
+.profil-poza {
+    width: 250px;
+    height: auto;
+    border: 2px solid #ccc;
+    margin-right: 20px;
+}
+
+/* Containerul care contine imaginea si butonul pe acelasi rand */
+.profil-image-row {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 255, 0.1); /* respectam patternul albastru/alternant */
+}
+
+/* Butonul si label-ul pentru incarcare */
+.profil-upload {
+    margin-left: auto; /* impinge incarcarea in dreapta imaginii */
+}
+
+    .profil-upload label {
+        font-weight: 600;
+        margin-right: 10px;
+    }

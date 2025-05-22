@@ -1,0 +1,73 @@
+@model PrimarieApp.Models.Departament
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/Angajat.css" />
+}
+
+@{
+    ViewData["Title"] = "Editează Departament";
+}
+
+<h2 class="angajat-titlu">@ViewData["Title"]</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <table class="angajat-tabel">
+        <tr>
+            <td>Nume</td>
+            <td><input asp-for="Nume" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td>Descriere</td>
+            <td><textarea asp-for="Descriere" class="form-control"></textarea></td>
+        </tr>
+    </table>
+
+    <h3 class="angajat-titlu" style="font-size: 1.3rem;">Angajați din departament</h3>
+
+    <table class="angajat-tabel">
+        <thead>
+            <tr>
+                <td><strong>ID</strong></td>
+                <td><strong>Nume</strong></td>
+                <td><strong>Post</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Angajati != null && Model.Angajati.Any())
+            {
+                foreach (var angajat in Model.Angajati)
+                {
+                    <tr>
+                        <td>@angajat.Id</td>
+                        <td>
+                            <a href="@Url.Action("Pagina", "Angajat", new { id = angajat.Id })">
+                                @angajat.Nume @angajat.InitialaTata. @angajat.Prenume
+                            </a>
+                        </td>
+                        <td>
+                            @if (angajat.Post != null)
+                            {
+                                <a href="@Url.Action("Pagina", "Post", new { id = angajat.PostId })">
+                                    @angajat.Post.NumePost
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3"><em>Nu există angajați în acest departament.</em></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="btn-grup-formular">
+        <button type="submit" class="btn-formular btn-success">Salvează</button>
+        <a asp-action="Index" class="btn-formular btn-secondary">Renunță</a>
+    </div>
+</form>
